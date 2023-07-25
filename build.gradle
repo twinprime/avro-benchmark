@@ -1,0 +1,20 @@
+plugins {
+    id "org.jetbrains.dokka" version "$dokka_version"
+    id "org.jetbrains.kotlin.jvm" version "$kotlin_version"
+    id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlin_version"
+    id "org.jetbrains.kotlinx.kover" version "$kover_version"
+    id "com.jfrog.artifactory" version "$artifactoryPluginVersion"
+    id "maven-publish"
+    id "org.sonarqube" version "$sonarQubePluginVersion"
+}
+
+apply from: "$commonScriptsHome/jar-publication.gradle"
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.15.2"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-avro:2.15.2"
+    implementation "com.github.avro-kotlin.avro4k:avro4k-core:1.8.0"
+    implementation "org.apache.avro:avro:1.11.1"
+}
