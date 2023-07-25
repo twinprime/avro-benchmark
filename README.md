@@ -8,3 +8,5 @@ A significant amount of CPU time was spent in the
 ![VisualVM Avro4k](visualvm-avro4k.png)
 
 Use `gradle run` to run the benchmark.
+
+[Issue reported to Avro4k project](https://github.com/avro-kotlin/avro4k/issues/151).
