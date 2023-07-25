@@ -2,13 +2,21 @@ plugins {
     id "org.jetbrains.dokka" version "$dokka_version"
     id "org.jetbrains.kotlin.jvm" version "$kotlin_version"
     id 'org.jetbrains.kotlin.plugin.serialization' version "$kotlin_version"
-    id "org.jetbrains.kotlinx.kover" version "$kover_version"
-    id "com.jfrog.artifactory" version "$artifactoryPluginVersion"
-    id "maven-publish"
-    id "org.sonarqube" version "$sonarQubePluginVersion"
+    id 'application'
 }
 
-apply from: "$commonScriptsHome/jar-publication.gradle"
+application {
+    mainClass = 'aero.airlab.common.benchmark.Benchmark'
+}
+
+java {
+    sourceCompatibility = "${java_version}"
+    targetCompatibility = "${java_version}"
+}
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect"
